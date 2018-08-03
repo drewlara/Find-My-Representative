@@ -1,9 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title></title>
+    <meta charset="UTF-8">
+    <title>Find My Rep</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="main.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
 
+    <header>
+        <div class="search-container">
+            <h1 class="title">Find My Representatives</h1>
+            <form class="search-form" action="action_page.php">
+                <input type="text" placeholder="Enter your address..." name="search" class="search-input">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="rep-info-title">Viewing Representative Information for: <span class="rep-info-address"></span></h2>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+        <div class="rep-box-container"></div>
+        <div class="rep-modal-container"></div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
+
 </html>
