@@ -36,8 +36,16 @@ function prevButton(results){
 function displayBox(officials){
 	let results = officials.map(official => renderBox(official));
 
+	//empty container
+	$('rep-box-container').empty();
+
+	//reset global variables for pages
+	begin = 0;
+	end = 8;
+
 	//displaying 8 official per page
 	$('.next').css('display', 'inline');
+	$('.prev').css('display', 'none');
 	let displayed = results.slice(begin, end);
     $('.rep-box-container').html(displayed);
 

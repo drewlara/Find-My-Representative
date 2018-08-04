@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 main {
 	text-align: center;
 }
@@ -17,4 +21,20 @@ main {
 .box-wrapper {
 	margin-left: 15px;
 	margin-right: 15px;
+	border: 1px solid black;
+	margin-bottom: 20px;
+}
+
+.rep-initials {
+	display: inline-block;
+    width: 150px;
+    height: 150px;
+   	border: 1px solid black;
+    border-radius: 50%;
+    color: black;
+}
+
+.rep-initals p {
+	margin: 300px auto;
+    font-size: 3em;
 }
