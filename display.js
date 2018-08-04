@@ -55,5 +55,47 @@ function displayBox(officials){
 }
 
 function displayModals(officials){
+	let results = officials.map(official => renderModal(official));
+
+	$('main').on('click', '.expand', function(){
+        let repName = $(this).attr('id');
+        officials.forEach(function(official, index){
+            if(official.name === repName){
+                $('.rep-modal-container').html(results[index]);
+                $('.modal').css('display', 'block');
+            }
+        });
+    });
+    
+    $('main').on('click', '.closeBtn', function(){
+        $('.modal').css('display', 'none');
+    });
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,10 +6,27 @@ function renderBox(official) {
                     </div>
                     <div class="box-inner">
                         <h3 class="rep-name">${official.name}</h3>
-                        <h4 class="rep-party">${renderPartyName(official)}</h4>
                         <h4 class="rep-office">${official.positionHeld}</h4>
-                        <div class="rep-moreinfo"><a class="expand">+</a></div>
+                        <h5 class="rep-party">${renderPartyName(official)}</h5>
+                        <div class="rep-moreinfo"><a id="${official.name}" class="expand">+</a></div>
                     </div>
+                </div>
+            </div>`
+}
+
+function renderModal(official){
+    return `<div class="modal">
+                <div class="modal-content">
+                    <span class="closeBtn">&times;</span>
+                    <div class="modal-image">
+                        ${renderAvatar(official)}
+                    </div>
+                    <p class="modal-name">${official.name}</p>
+                    <p class="modal-position">${official.positionHeld}</p>
+                    <p class="modal-party">${renderPartyName(official)}</p>
+                    <p class="modal-contact"></p>
+                    <div class="modal-links"></div>
+                    <div class="modal-latest-news</div>
                 </div>
             </div>`
 }
