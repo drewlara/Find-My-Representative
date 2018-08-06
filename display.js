@@ -4,7 +4,7 @@ let end = 8;
 
 
 function displaySearchAddress(data){
-	$('.rep-info-address').text(`${data.normalizedInput.city} ${data.normalizedInput.state} ${data.normalizedInput.zip}`);
+	$('.rep-display-title').text(renderRepDisplayTitle(data));
 }
 
 function nextButton(results){
@@ -74,7 +74,7 @@ function displayModals(officials){
 }
 
 function displayCivicErr() {
-	$('.rep-info-title').text('Address submitted is not valid, please enter a valid US address');
+	$('.rep-display-title').text('Address submitted is not valid, please enter a valid US address');
 }
 
 

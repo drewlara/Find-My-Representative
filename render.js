@@ -53,3 +53,7 @@ function renderAvatar(official) {
         return `<div class="rep-initials"><p>${initials}</p></div>`
     }
 }
+
+function renderRepDisplayTitle(data){
+    return `Viewing Representative Information for: ${data.normalizedInput.city} ${data.normalizedInput.state} ${data.normalizedInput.zip}`;
+}
