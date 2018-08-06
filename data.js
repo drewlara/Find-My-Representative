@@ -30,7 +30,8 @@ function getDataFromCivicApi(searchTerm, callback) {
         key: CIVIC_API_KEY,
         address: searchTerm
     }
-    $.getJSON(CIVIC_API_URL, query, callback);
+    $.getJSON(CIVIC_API_URL, query, callback)
+        .fail(displayCivicErr);
 }
 
 function watchSubmit() {

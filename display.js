@@ -73,6 +73,10 @@ function displayModals(officials){
 
 }
 
+function displayCivicErr() {
+	$('.rep-info-title').text('Address submitted is not valid, please enter a valid US address');
+}
+
 
 
 
