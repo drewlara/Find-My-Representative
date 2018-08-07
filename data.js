@@ -40,7 +40,6 @@ function buildNewsQuery(official) {
 
 
 function getDataFromNewsApi(officialQuery, callback) {
-    console.log(buildNewsQuery(officialQuery));
     const query = {
     apiKey: NEWS_API_KEY,
     q: buildNewsQuery(officialQuery),

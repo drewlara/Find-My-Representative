@@ -2,6 +2,7 @@
 let begin = 0;
 let end = 8;
 
+/*const SCROLL_INTERVAL = 8*/
 
 function displaySearchAddress(data){
 	$('.rep-display-title').text(renderRepDisplayTitle(data));
@@ -10,7 +11,7 @@ function displaySearchAddress(data){
 function nextButton(results){
 	$('main').on('click', '.next', function () {
         begin = end;
-        end += 8;
+        end += 8; //change to scrollinterval
         let displayed = results.slice(begin, end);
         $('.rep-box-container').html(displayed);
         $('.prev').css('display', 'inline');
@@ -58,7 +59,7 @@ function displayModals(officials){
 	let results = officials.map(official => renderModal(official));
 
 	$('main').on('click', '.expand', function(){
-        let repName = $(this).attr('id');
+        let repName = $(this).attr('id'); //data attr
         officials.forEach(function(official, index){
             if(official.name === repName){
             	getDataFromNewsApi(official, displayModalNews);
