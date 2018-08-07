@@ -9,20 +9,47 @@ function cleanCivicData(data) {
     let officials = data.officials;
     let offices = data.offices;
 
-    //adding position names to the officials array
-    officials.forEach(function (official, index) {
+    //adding position names and location to the officials array
+    officials.forEach(function(official, index) {
         for (let i = 0; i < offices.length; i++) {
             if (offices[i].officialIndices.includes(index)) {
                 official.positionHeld = offices[i].name;
+                official.locID = `${data.normalizedInput.city} ${data.normalizedInput.state}`
             }
         }
     });
-    
-    //displaying data
+
     displaySearchAddress(data);
     displayBox(officials);
     displayModals(officials);
 
+}
+
+function buildNewsQuery(official) {
+    let query = '';
+
+    if(official.positionHeld == 'President of the United States' || official.positionHeld == 'Vice-President of the United States' || official.positionHeld == "United States Senate") {
+        query += official.name;
+    }
+    else {
+        query += `"${official.name}" OR ${official.locID}`
+    }
+
+    return query;
+}
+
+
+function getDataFromNewsApi(officialQuery, callback) {
+    console.log(buildNewsQuery(officialQuery));
+    const query = {
+    apiKey: NEWS_API_KEY,
+    q: buildNewsQuery(officialQuery),
+    sortBy: 'relevancy',
+    sources: 'cbs-news, abc-news, nbc-news, cnn, fox-news, msnbc, the-new-york-times, the-washington-post, usa-today, the-hill, the-wall-street-journal, politico, reuters, axios',
+    pageSize: 5
+  }
+    $.getJSON(NEWS_API_URL, query, callback)
+        .fail(displayNewsErr);
 }
 
 function getDataFromCivicApi(searchTerm, callback) {
@@ -33,6 +60,7 @@ function getDataFromCivicApi(searchTerm, callback) {
     $.getJSON(CIVIC_API_URL, query, callback)
         .fail(displayCivicErr);
 }
+
 
 function watchSubmit() {
     $('.search-form').submit(function (event) {

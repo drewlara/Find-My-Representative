@@ -11,7 +11,7 @@ function renderBox(official) {
                         <div class="rep-moreinfo"><a id="${official.name}" class="expand">+</a></div>
                     </div>
                 </div>
-            </div>`
+            </div>`;
 }
 
 function renderModal(official){
@@ -25,10 +25,15 @@ function renderModal(official){
                     <p class="modal-position">${official.positionHeld}</p>
                     <p class="modal-party">${renderPartyName(official)}</p>
                     <p class="modal-contact"></p>
-                    <div class="modal-links"></div>
-                    <div class="modal-latest-news</div>
+                    <div class="modal-news"></div>
                 </div>
-            </div>`
+            </div>`;
+}
+
+function renderModalNews(article) {
+    return `<img src="${article.urlToImage}" alt="news-story-image">
+            <p>Source: ${article.source.name}</p>
+            <p>${article.title}</p>`;
 }
 
 function renderPartyName(official) {

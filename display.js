@@ -61,6 +61,7 @@ function displayModals(officials){
         let repName = $(this).attr('id');
         officials.forEach(function(official, index){
             if(official.name === repName){
+            	getDataFromNewsApi(official, displayModalNews);
                 $('.rep-modal-container').html(results[index]);
                 $('.modal').css('display', 'block');
             }
@@ -73,11 +74,18 @@ function displayModals(officials){
 
 }
 
+function displayModalNews(newsData) {
+	results = newsData.articles.map(article => renderModalNews(article))
+	$('.modal-news').html(results);
+}
+
 function displayCivicErr() {
 	$('.rep-display-title').text('Address submitted is not valid, please enter a valid US address');
 }
 
-
+function displayNewsErr() {
+	$('.modal-news').text('ERROR FETCHING ARTICLES');
+}
 
 
 

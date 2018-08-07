@@ -73,6 +73,7 @@ main {
     margin: 50% auto;
     padding: 20px;
     width: 60%;
+    height: 400px;
     margin: 350px auto;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2)
 }
@@ -93,4 +94,8 @@ main {
     width: 145px;
     height: 185px;
     float: left;
+}
+
+.modal-news img {
+	width: 50px;
 }
