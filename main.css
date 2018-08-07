@@ -93,21 +93,133 @@ main {
 	position: relative;
 }
 
+.wrapper-inner {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+}
+
+.box-wrapper {
+    margin-top: 90px;
+    margin-bottom: 10px;
+    z-index: 1;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.box {
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    text-align: center;
+    padding-top: 65px;
+}
+
+.box-inner {
+    padding: 15px;
+    color: #3A4856;
+}
+
+.avatar {
+    border-radius: 50%;
+    top: -75px;
+    margin-left: -75px;
+    left: 50%;
+    position: absolute;
+}
+
+.avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+}
+
+.rep-initials {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background-color: #9EADBD;
+    border-radius: 50%;
+    color: white;
+}
+
+.rep-initials p {
+    margin: 50px auto;
+    font-size: 3em
+}
+
+.rep-name {
+    font-size: 1.5em;
+    margin-bottom: 0px;
+}
+
+.rep-party {
+    font-size: .8em;
+    margin-top: 10px;
+}
+
+.rep-office {
+    font-size: 1.00em
+}
+
+.rep-moreinfo {
+	bottom: 25px;
+	left: 40%;
+	position: absolute;
+}
+
 .expand {
     cursor: pointer;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    border: 3px solid black;
+    border: 3px solid #3A4856;
     border-radius: 50%;
-    color: black;
+    color: #3A4856;
     text-decoration: none;
+    font-size: 1.75em;
 }
 
 .expand:hover {
-    background-color: black;
+    background-color: #3A4856;
     color: white;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 4em;
+    border-radius: 0 3px 3px 0;
+    display: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.prev {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+}
+
+.next {
+    position: absolute;
+    top: 50%;
+    right: 20px;
 }
 
 .modal {
