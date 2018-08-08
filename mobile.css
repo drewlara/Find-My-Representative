@@ -1,0 +1,113 @@
+@media (max-width: 600px) {
+    .capitol-icon {
+        width: 100px;
+    }
+    
+    .title {
+        font-size: 2em;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+    
+    form {
+        width: 320px;
+    }
+    
+    form.search-form input[type=text] {
+        width: 80%;
+    }
+    
+    form.search-form button {
+        width: 20%;
+    }
+    
+    .search-container {
+        padding-top: 100px;
+    }
+    
+    .rep-display-title {
+        font-size: 1.25em;
+    }
+    
+    .prev,
+    .next {
+        font-size: 3.5em;
+    }
+    
+    .prev {
+        position: absolute;
+        top: 5%;
+        right: 300px;
+    }
+    
+    .next {
+        position: absolute;
+        top: 5%;
+        left: 300px;
+    }
+    
+    .modal-content {
+        width: 80%;
+        height: 500px;
+        overflow: auto;
+    }
+    
+    .modal-image {
+        float: none;
+    }
+    
+    .modal-image img {
+        width: 100px;
+        height: 140px;
+    }
+    
+    .modal-name {
+        font-size: 1.5em;
+    }
+    
+    .modal-position {
+        font-size: 1em;
+    }
+    
+    .modal-party {
+        font-size: .75em;
+    }
+    
+    .modal-main {
+        font-size: 1em;
+    }
+    
+    .modal-links img {
+        width: 30px;
+    }
+    
+    .modal-links a {
+        margin-right: 25px;
+    }
+    
+    .modal-news-container {
+        margin-top: 20px;
+    }
+    
+    .modal-news {
+        padding: 0px;
+    }
+    
+    .modal-news-container p {
+        font-size: 1.15em
+    }
+    
+    .modal-news-container a {
+        font-size: .75em;
+    }
+    
+    .modal-news-container img {
+        width: 75px;
+        height: 40px
+    }
+}
