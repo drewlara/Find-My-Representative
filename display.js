@@ -9,7 +9,8 @@ function displaySearchAddress(data){
 }
 
 function nextButton(results){
-	$('main').on('click', '.next', function () {
+	$('main').on('click', '.next', function (event) {
+        event.preventDefault();
         begin = end;
         end += 8; //change to scrollinterval
         let displayed = results.slice(begin, end);
@@ -22,7 +23,8 @@ function nextButton(results){
 }
 
 function prevButton(results){
-	$('main').on('click', '.prev', function () {
+	$('main').on('click', '.prev', function (event) {
+        event.preventDefault();
         end = begin;
         begin -= 8;
         let displayed = results.slice(begin, end);
@@ -58,7 +60,8 @@ function displayBox(officials){
 function displayModals(officials){
 	let results = officials.map(official => renderModal(official));
 
-	$('main').on('click', '.expand', function(){
+	$('main').on('click', '.expand', function(event){
+        event.preventDefault();
         let repName = $(this).attr('id'); //data attr
         officials.forEach(function(official, index){
             if(official.name === repName){
@@ -85,7 +88,7 @@ function displayCivicErr() {
 }
 
 function displayNewsErr() {
-	$('.modal-news').text('ERROR FETCHING ARTICLES');
+	$('.modal-news-container').text('ERROR FETCHING ARTICLES');
 }
 
 

@@ -204,7 +204,7 @@ main {
     font-size: 1.75em;
 }
 
-.expand:hover {
+.expand:hover, .expand:focus {
     background-color: #3A4856;
     color: white;
 }
@@ -219,6 +219,7 @@ main {
     font-size: 4em;
     border-radius: 0 3px 3px 0;
     display: none;
+    text-decoration: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: -moz-none;
@@ -256,7 +257,7 @@ main {
     margin: 50% auto;
     padding: 20px;
     width: 60%;
-    height: 600px;
+    height: 650px;
     margin: 100px auto;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2)
 }
@@ -267,7 +268,7 @@ main {
     font-size: 30px;
 }
 
-.closeBtn:hover {
+.closeBtn:hover, .closeBtn:focus {
     color: #3A4856;
     text-decoration: none;
     cursor: pointer;

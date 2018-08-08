@@ -11,24 +11,24 @@
 
 <body>
 
-    <header>
+    <header role="banner">
         <div class="search-container">
             <img src="assets/capital-icon.png" alt="capitol-icon" class="capitol-icon">
             <h1 class="title">Find My Representatives</h1>
             <h2 class="subtitle">A simple way to find information on your elected representatives</h2>
             <form class="search-form" action="action_page.php">
-                <input type="text" placeholder="Enter your address..." name="search" class="search-input">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Enter your address..." name="search" class="search-input" aria-label="address search">
+                <button type="submit" value="rep-search"><i class="fa fa-search"></i></button>
             </form>
         </div>
     </header>
 
-    <main>
+    <main role="main">
         <h2 class="rep-display-title"></h2>
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
-        <div class="rep-box-container"></div>
-        <div class="rep-modal-container"></div>
+        <a href="#" class="prev">&#10094;</a>
+        <a href="#" class="next">&#10095;</a>
+        <div class="rep-box-container" aria-live="assertive"></div>
+        <div class="rep-modal-container" aria-live="assertive"></div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

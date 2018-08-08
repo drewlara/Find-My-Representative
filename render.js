@@ -8,7 +8,7 @@ function renderBox(official) {
                         <h3 class="rep-name">${official.name}</h3>
                         <h4 class="rep-office">${official.positionHeld}</h4>
                         <h5 class="rep-party">${renderPartyName(official)}</h5>
-                        <div class="rep-moreinfo"><a id="${official.name}" class="expand">+</a></div>
+                        <div class="rep-moreinfo"><a href="${official.name}-modal" id="${official.name}" class="expand">+</a></div>
                     </div>
                 </div>
             </div>`;
