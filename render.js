@@ -14,26 +14,65 @@ function renderBox(official) {
             </div>`;
 }
 
-function renderModal(official){
+function renderModal(official) {
     return `<div class="modal">
                 <div class="modal-content">
                     <span class="closeBtn">&times;</span>
-                    <div class="modal-image">
-                        ${renderAvatar(official)}
+                    <div class="modal-header">
+                        <div class="modal-image">
+                            ${renderAvatar(official)}
+                        </div>
+                        <div class="modal-info">
+                            <p class="modal-name">${official.name}</p>
+                            <p class="modal-position">${official.positionHeld}</p>
+                            <p class="modal-party">${renderPartyName(official)}</p>
+                        </div>
                     </div>
-                    <p class="modal-name">${official.name}</p>
-                    <p class="modal-position">${official.positionHeld}</p>
-                    <p class="modal-party">${renderPartyName(official)}</p>
-                    <p class="modal-contact"></p>
-                    <div class="modal-news"></div>
+                    <div class="modal-main">
+                        <div class="modal-links">
+                            ${renderModalLinks(official)}
+                            ${renderModalContacts(official)}
+                        </div>
+                        <div class="modal-news-container">
+                            <p>News Articles</p><hr><ul class="modal-news"></ul>
+                        </div>
+                    </div>
                 </div>
             </div>`;
 }
 
 function renderModalNews(article) {
-    return `<img src="${article.urlToImage}" alt="news-story-image">
-            <p>Source: ${article.source.name}</p>
-            <p>${article.title}</p>`;
+    return `<li class="article"><img src="${article.urlToImage}" alt="news-story-image"><a href="${article.url}" target="_blank">
+            ${article.title}</a></li>`;
+}
+
+function renderModalLinks(official) {
+    let links = ``;
+
+    if (official.urls) {
+        links += `<a href="${official.urls}" target="_blank"><img src="assets/website-icon.png" alt="website-icon">Website</a>`;
+    }
+
+    if (official.channels) {
+        official.channels.forEach(function (link) {
+            if (link.type == "Facebook") {
+                links += `<a href="https://facebook.com/${link.id}" target="_blank"><img src="assets/facebook-icon.png" alt="facebook-icon">Facebook</a>`;
+            } else if (link.type == "Twitter") {
+                links += `<a href="https://twitter.com/${link.id}" target="_blank"><img src="assets/twitter-icon.png" alt="twitter-icon">Twitter</a>`;
+            }
+        });
+    }
+    return links;
+}
+
+function renderModalContacts(official) {
+    let contactInfo = ``;
+    if (official.emails) {
+        contactInfo += `<a href="mailto:${official.emails}"><img src="assets/email-icon.png" alt="email-icon">Email</a>`
+    } else if (official.phones) {
+        contactInfo += `<a href="tel:${official.phones}"><img src="assets/phone-icon.png" alt="phone-icon">Phone</a>`
+    }
+    return contactInfo;
 }
 
 function renderPartyName(official) {
@@ -71,6 +110,6 @@ function renderAvatar(official) {
     }
 }
 
-function renderRepDisplayTitle(data){
+function renderRepDisplayTitle(data) {
     return `Viewing Representative Information for: ${data.normalizedInput.city} ${data.normalizedInput.state} ${data.normalizedInput.zip}`;
 }

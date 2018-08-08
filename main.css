@@ -251,12 +251,13 @@ main {
 
 .modal-content {
     background: #fff;
-    color: black;
+    border-radius: 8px;
+    color: #3A4856;
     margin: 50% auto;
     padding: 20px;
     width: 60%;
-    height: 400px;
-    margin: 350px auto;
+    height: 600px;
+    margin: 100px auto;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2)
 }
 
@@ -272,12 +273,104 @@ main {
     cursor: pointer;
 }
 
-.modal-image img {
-    width: 145px;
-    height: 185px;
+.modal-header {
+    width: 100%;
+}
+
+.modal-image {
+    display: inline-block;
     float: left;
 }
 
-.modal-news img {
-	width: 50px;
+.modal-image img {
+    width: 150px;
+    height: 190px;
+    margin-bottom: 10px;
+}
+
+.modal-info {
+    display: inline-block;
+}
+
+.modal-name {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.modal-position {
+    font-size: 1.75em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-party {
+    font-size: 1.25em;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.modal-main {
+    margin-top: 40px;
+    font-size: 1.15em;
+    width: 140px;
+    margin: 0;
+    width: 100%;
+    
+}
+
+.modal-links img {
+    width: 40px;
+}
+
+.modal-links a {
+    text-decoration: none;
+    color: #3A4856;
+    margin-right: 15px;
+}
+
+.modal-links a:visited {
+    color: #3A4856;
+}
+
+.modal-links a:hover {
+    text-decoration: underline;
+}
+
+.modal-news-container {
+    margin-top: 50px;
+}
+
+.modal-news-container ul {
+    list-style-type: none;
+    text-align: left
+}
+
+.modal-news-container img {
+    width: 100px;
+    height: 50px;
+}
+
+.modal-news-container p {
+    font-size: 1.5em;
+    margin: 0;
+    text-align: left;
+}
+
+.modal-news-container a {
+    text-decoration: none;
+    color: #3A4856;
+    margin-bottom: 10px;
+}
+
+.modal-news-container a:visited {
+    color: #3A4856;
+}
+
+.modal-news-container a:hover {
+    text-decoration: underline;
+}
+
+.modal-news-container hr {
+    color: #3A4856;
 }
