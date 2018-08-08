@@ -1,7 +1,7 @@
 function renderBox(official) {
     return `<div class="box-wrapper">
                 <div class="box">
-                    <div class="avatar">
+                    <div class="avatar ${renderPartyClass(official)}">
                         ${renderAvatar(official)}
                     </div>
                     <div class="box-inner">
@@ -45,6 +45,18 @@ function renderPartyName(official) {
         return `Independent`;
     } else {
         return `No Party`;
+    }
+}
+
+function renderPartyClass(official) {
+    if (official.party === 'Republican') {
+        return `avatar-repub`;
+    } else if (official.party === 'Democratic') {
+        return `avatar-demo`;
+    } else if (official.party === 'Independent') {
+        return `avatar-ind`;
+    } else {
+        return `avatar-unk`;
     }
 }
 
