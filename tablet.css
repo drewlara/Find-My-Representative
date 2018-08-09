@@ -1,4 +1,4 @@
-@media (max-width: 800px) {
+@media (min-width: 768px) {
     .capitol-icon {
         width: 200px;
     }
@@ -113,7 +113,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
     .capitol-icon {
         width: 200px;
     }
