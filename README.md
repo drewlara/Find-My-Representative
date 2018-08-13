@@ -13,3 +13,7 @@ Usage Instructions
 
 Screenshots
 -----------
+![alt text](/assets/landing-page.png "Landing Page")
+![alt text](/assets/rep-page.png "Representative Page")
+![alt text](/assets/modal-page.png "Modal Page")
+![alt text](/assets/more-reps-page.png "More Representatives Page")
