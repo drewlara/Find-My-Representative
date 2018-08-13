@@ -3,6 +3,7 @@ Find-My-Representative
 
 A simple way to find and view information on your elected officials
 --------------------------------------------------------------------
+### [Live Link](https://drewlara.github.io/Find-My-Representative/)
 
 Usage Instructions
 -------------------
