@@ -19,13 +19,16 @@ function cleanCivicData(data) {
         }
     });
 
+    //displaying to screen
     displaySearchAddress(data);
     displayBox(officials);
     displayModals(officials);
 
 }
 
+
 function buildNewsQuery(official) {
+    //building NewsQuery for rep for NewsApi
     let query = '';
 
     if(official.positionHeld == 'President of the United States' || official.positionHeld == 'Vice-President of the United States' || official.positionHeld == "United States Senate") {
@@ -40,6 +43,7 @@ function buildNewsQuery(official) {
 
 
 function getDataFromNewsApi(officialQuery, callback) {
+    //fetching news articles
     const query = {
     apiKey: NEWS_API_KEY,
     q: buildNewsQuery(officialQuery),
@@ -52,6 +56,7 @@ function getDataFromNewsApi(officialQuery, callback) {
 }
 
 function getDataFromCivicApi(searchTerm, callback) {
+    //fetching representative data
     const query = {
         key: CIVIC_API_KEY,
         address: searchTerm

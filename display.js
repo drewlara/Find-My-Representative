@@ -1,18 +1,19 @@
 //global variables for pages
+const PAGE_INTERVAL = 8
 let begin = 0;
 let end = 8;
-
-/*const SCROLL_INTERVAL = 8*/
 
 function displaySearchAddress(data){
 	$('.rep-display-title').text(renderRepDisplayTitle(data));
 }
 
 function nextButton(results){
+	$('main').off('click', '.next');
 	$('main').on('click', '.next', function (event) {
         event.preventDefault();
         begin = end;
-        end += 8; //change to scrollinterval
+        end += PAGE_INTERVAL;
+        console.log('nextButton: ','begin:', begin, 'end:', end);
         let displayed = results.slice(begin, end);
         $('.rep-box-container').html(displayed);
         $('.prev').css('display', 'inline');
@@ -23,10 +24,12 @@ function nextButton(results){
 }
 
 function prevButton(results){
+	$('main').off('click', '.prev');
 	$('main').on('click', '.prev', function (event) {
         event.preventDefault();
         end = begin;
-        begin -= 8;
+        begin -= PAGE_INTERVAL;
+        console.log('prevButton: ','begin:', begin, 'end:', end);
         let displayed = results.slice(begin, end);
         $('.rep-box-container').html(displayed);
         $('.next').css('display', 'inline');
@@ -44,11 +47,12 @@ function displayBox(officials){
 
 	//reset global variables for pages
 	begin = 0;
-	end = 8;
+	end = PAGE_INTERVAL;
 
 	//displaying 8 official per page
 	$('.next').css('display', 'inline');
 	$('.prev').css('display', 'none');
+	console.log('displayBox: ','begin:', begin, 'end:', end);
 	let displayed = results.slice(begin, end);
     $('.rep-box-container').html(displayed);
 
