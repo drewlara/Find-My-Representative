@@ -94,28 +94,3 @@ function displayCivicErr() {
 function displayNewsErr() {
 	$('.modal-news-container').text('ERROR FETCHING ARTICLES');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

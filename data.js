@@ -65,7 +65,7 @@ function getDataFromCivicApi(searchTerm, callback) {
         .fail(displayCivicErr);
 }
 
-
+//watch for address form submission
 function watchSubmit() {
     $('.search-form').submit(function (event) {
         event.preventDefault();
